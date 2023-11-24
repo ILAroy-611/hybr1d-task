@@ -1,7 +1,7 @@
-import "./App.css";
+import './App.css'
 
 function App() {
-  return <div className="App">Hybr1d search task</div>;
+  return <div className="App">Hybr1d search</div>
 }
 
-export default App;
+export default App
