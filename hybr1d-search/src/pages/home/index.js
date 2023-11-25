@@ -2,10 +2,12 @@ import { useContext } from 'react'
 import Header from '../../layout/header'
 import { SearchContext } from '../../state/SearchContext'
 import NewsCard from '../../components/card'
+import { NavLink } from 'react-router-dom'
+import './style.css'
 
 export default function Home() {
-    const { data } = useContext(SearchContext)
-    console.debug('seachedData', data)
+    const { data, setObjectID } = useContext(SearchContext)
+    console.debug(data)
     return (
         <div className="home-page-wrapper">
             <Header />
@@ -13,9 +15,11 @@ export default function Home() {
                 {data?.hits?.map((ele) => {
                     return (
                         <ul>
-                            <li style={{ listStyleType: 'none' }}>
-                                <NewsCard {...ele} />
-                            </li>
+                            <nav id="newscard" onClick={() => setObjectID(ele?.objectID)}>
+                                <NavLink to="/news" className={'link'}>
+                                    <NewsCard {...ele} />
+                                </NavLink>
+                            </nav>
                         </ul>
                     )
                 })}

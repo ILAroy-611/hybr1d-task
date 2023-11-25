@@ -4,6 +4,7 @@ export default function NewsCard({
     title,
     story_title,
     story_text,
+    text,
     url,
     points,
     author,
@@ -13,7 +14,10 @@ export default function NewsCard({
         <div className="newscard-wrapper">
             <div className="newscard-title-container">
                 <h3 className="newscard-title">{title || story_title}</h3>
-                <p className="newscard-text">{story_text ?? ''}</p>
+                <p className="newscard-text">{text ?? story_text ?? ''}</p>
+                <a href={`${url}`} className="newscard-text">
+                    {url}
+                </a>
             </div>
             <div className="newscard-footer-container">
                 <div className="footer footer-content">Points: {points} </div>

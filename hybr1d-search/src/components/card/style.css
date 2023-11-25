@@ -6,7 +6,7 @@
     border-radius: 1rem;
     text-align: justify;
     background: #ebfeda;
-    transition: all 0.02 ease-in;
+    transition: all 0.02 ease-in-out;
 }
 
 .newscard-title-container {
@@ -16,7 +16,7 @@
 .newscard-wrapper:hover {
     background: linear-gradient(108.54deg, #f5f178 9%, #bfb4fe 75.95%);
     cursor: pointer;
-    transform: translateX(1.5rem) skewX(-20deg);
+    transform: translateX(1.5rem) skewX(-10deg);
 }
 
 .newscard-title {
