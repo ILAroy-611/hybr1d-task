@@ -12,11 +12,11 @@ export default function Home() {
             <div>
                 {data?.hits?.map((ele) => {
                     return (
-                        <li>
-                            <ul>
+                        <ul>
+                            <li style={{ listStyleType: 'none' }}>
                                 <NewsCard {...ele} />
-                            </ul>
-                        </li>
+                            </li>
+                        </ul>
                     )
                 })}
             </div>

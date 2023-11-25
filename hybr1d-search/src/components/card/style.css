@@ -1,0 +1,49 @@
+.newscard-wrapper {
+    margin: 1rem;
+    max-width: 70%;
+    min-height: 4rem;
+    border: 1px solid rgb(224, 223, 223);
+    border-radius: 1rem;
+    text-align: justify;
+    background: #ebfeda;
+    transition: all 0.02 ease-in;
+}
+
+.newscard-title-container {
+    padding: 0.4rem 1rem;
+}
+
+.newscard-wrapper:hover {
+    background: linear-gradient(108.54deg, #f5f178 9%, #bfb4fe 75.95%);
+    cursor: pointer;
+    transform: translateX(1.5rem) skewX(-20deg);
+}
+
+.newscard-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.newscard-text {
+    font-size: 1.2rem;
+    color: rgb(80, 82, 85);
+}
+
+.newscard-footer-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 0.4rem 1rem;
+}
+
+.footer-content {
+    font-size: 0.8rem;
+    color: lightslategray;
+    display: inline-block;
+    padding-right: 0.8rem;
+}
+
+.footer {
+    border-right: 1px solid rgb(129, 127, 127);
+}
