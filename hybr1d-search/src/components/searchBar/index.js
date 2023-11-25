@@ -1,10 +1,9 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './style.css'
-import useFetch from '../../hooks/useFetch'
+import { SearchContext } from '../../state/SearchContext'
 
 export default function SearchBar() {
-    const [search, setSearch] = useState('')
-    useFetch(search)
+    const { search, setSearch } = useContext(SearchContext)
     const handleChange = (e) => setSearch(e.target.value)
 
     return (

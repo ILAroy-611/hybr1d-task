@@ -12,7 +12,7 @@ export default function Home() {
                 {data?.hits?.map((ele) => {
                     return (
                         <li>
-                            <ul>{ele.title}</ul>
+                            <ul>{ele.title || ele.story_title}</ul>
                         </li>
                     )
                 })}

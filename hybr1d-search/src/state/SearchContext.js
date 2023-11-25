@@ -1,13 +1,14 @@
-import { createContext } from 'react'
+import { createContext, useState } from 'react'
 import useFetch from '../hooks/useFetch'
 
 export const SearchContext = createContext()
 
 export default function SearchContextProvider({ children }) {
-    const { data, error, loading } = useFetch('')
+    const [search, setSearch] = useState('')
+    const { data, error, loading } = useFetch(search)
 
     return (
-        <SearchContext.Provider value={{ data, error, loading }}>
+        <SearchContext.Provider value={{ data, error, loading, search, setSearch }}>
             {children}
         </SearchContext.Provider>
     )
