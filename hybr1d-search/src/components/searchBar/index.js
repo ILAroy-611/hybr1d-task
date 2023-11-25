@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import './style.css'
 import { SearchContext } from '../../state/SearchContext'
 

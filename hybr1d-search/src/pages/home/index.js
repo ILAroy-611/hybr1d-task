@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import Header from '../../layout/header'
 import { SearchContext } from '../../state/SearchContext'
+import NewsCard from '../../components/card'
 
 export default function Home() {
     const { data } = useContext(SearchContext)
@@ -12,7 +13,9 @@ export default function Home() {
                 {data?.hits?.map((ele) => {
                     return (
                         <li>
-                            <ul>{ele.title || ele.story_title}</ul>
+                            <ul>
+                                <NewsCard {...ele} />
+                            </ul>
                         </li>
                     )
                 })}
