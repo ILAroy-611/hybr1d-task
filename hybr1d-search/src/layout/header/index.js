@@ -1,4 +1,5 @@
 import SearchBar from '../../components/searchBar'
+import './style.css'
 
 export default function Header() {
     return (

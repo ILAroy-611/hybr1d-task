@@ -2,11 +2,14 @@ import { useContext } from 'react'
 import { SearchContext } from '../../state/SearchContext'
 import { Hourglass } from 'react-loader-spinner'
 import { formatDate } from '../../utils'
+import Comment from '../../components/comment'
+import './style.css'
 
 export default function NewsPost() {
     const { newsData, newsError, newsLoading } = useContext(SearchContext)
-    const { title, text, type, author, created_at } = { ...newsData }
-
+    const { title, text, type, author, created_at, children } = { ...newsData }
+    console.debug(newsData)
+    // "306cce"  72a1ed
     return (
         <>
             {newsLoading ? (
@@ -17,20 +20,29 @@ export default function NewsPost() {
                     ariaLabel="hourglass-loading"
                     wrapperStyle={{}}
                     wrapperClass=""
-                    colors={['#306cce', '#72a1ed']}
+                    colors={['#f5f178', '#bfb4fe']}
                 />
             ) : (
                 <div className="newspost-detail-wrapper">
-                    <div className="newspost-type-wrapper">
-                        <div className="newspost-type">{type}</div>
-                    </div>
-                    <div className="newspost-header-wrapper">
-                        <h4 className="newspost-header">{title}</h4>
-                        <p className="newspost-text">{text ?? ''}</p>
-                        <div className="newspost-additional-info-wrapper">
-                            <div>{author}</div>
-                            <div>{created_at && formatDate(created_at)}</div>
+                    <div>
+                        <div className="newspost-type-wrapper">
+                            <div className="newspost-type">{type}</div>
                         </div>
+                        <div className="newspost-header-wrapper">
+                            <h4 className="newspost-header">{title}</h4>
+                            <p className="newspost-text">{text ?? ''}</p>
+                            <div className="newspost-additional-info-wrapper">
+                                <div className="newspost-author">{author}</div>
+                                <div className="newspost-date">
+                                    {created_at && formatDate(created_at)}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="newspost-comment-wrapper">
+                        {children?.map((comment) => (
+                            <Comment {...comment} />
+                        ))}
                     </div>
                 </div>
             )}

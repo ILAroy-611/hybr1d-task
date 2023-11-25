@@ -1,0 +1,41 @@
+.newspost-detail-wrapper {
+    padding: 3rem;
+    text-align: justify;
+}
+
+.newspost-type-wrapper {
+}
+
+.newspost-type {
+    color: green;
+    padding: 0.5rem 0;
+}
+
+.newspost-header-wrapper {
+}
+
+.newspost-header {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.newspost-text {
+    color: white;
+}
+
+.newspost-additional-info-wrapper {
+    padding: 1rem 0;
+    color: wheat;
+}
+
+.newspost-author {
+    font-size: 1.2rem;
+}
+
+.newspost-date {
+    font-size: 0.8rem;
+}
+
+.newspost-comment-wrapper {
+}

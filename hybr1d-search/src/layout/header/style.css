@@ -1,0 +1,12 @@
+.header-wrapper {
+    color: wheat;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+.logo {
+}
+
+.search-bar-wrapper {
+}

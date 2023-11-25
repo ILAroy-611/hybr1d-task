@@ -1,0 +1,32 @@
+.comment-wrapper {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 2px 2px rgb(216, 214, 214);
+    text-align: justify;
+    background-color: #e5ffd1;
+}
+
+.author-info-wrapper {
+}
+
+.author-info {
+    font-size: 0.8rem;
+    color: rgb(82, 26, 26);
+    font-weight: 600;
+}
+
+.comment-text-wrapper {
+    padding: 0.5rem 0;
+}
+
+.comment-text {
+    font-size: 0.9rem;
+    letter-spacing: -0.2px;
+}
+
+.comment-date {
+    padding: 0.2rem 0;
+    font-size: 0.8rem;
+    color: rgb(71, 47, 47);
+}

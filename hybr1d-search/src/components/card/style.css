@@ -26,8 +26,9 @@
 }
 
 .newscard-text {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: rgb(80, 82, 85);
+    text-decoration: none;
 }
 
 .newscard-footer-container {
