@@ -1,28 +1,35 @@
 import { useEffect, useState } from 'react'
-import { instance } from '../services/instance'
+import { getSearchResult } from '../utils/api'
 
-export default function useFetch(text) {
+export default function useFetch(text, pageOffset) {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({})
     const [error, setError] = useState('')
+    const [totalPage, setTotalPage] = useState(1)
 
-    const getSearchResult = async () => {
+    const handleFetchSearchResult = async () => {
         try {
             setLoading(true)
-            const response = await instance.get(`/search?query=${text}`)
-            setData({ ...response?.data })
+            const result = await getSearchResult(text, pageOffset)
+            console.debug(result)
+            setData((prevData) => {
+                return { ...prevData, ...result }
+            })
+            setTotalPage(result.nbPages)
         } catch (error) {
-            console.debug(error)
-            setError(error.message)
+            setError(error)
         } finally {
             setLoading(false)
         }
     }
 
     useEffect(() => {
-        getSearchResult()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [text])
+        setTimeout(() => {
+            handleFetchSearchResult()
+        }, 2000)
 
-    return { data, loading, error, text }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [text, pageOffset])
+
+    return { data, loading, error, text, totalPage }
 }

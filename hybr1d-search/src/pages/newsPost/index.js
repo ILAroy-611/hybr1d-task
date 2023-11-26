@@ -1,21 +1,22 @@
 import { useContext } from 'react'
 import { SearchContext } from '../../state/SearchContext'
 import { Hourglass } from 'react-loader-spinner'
-import { formatDate } from '../../utils'
+import { formatDate } from '../../utils/common/index'
 import Comment from '../../components/comment'
 import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
 import { useNavigate } from 'react-router-dom'
 import './style.css'
+import useNewsFetch from '../../hooks/useNewsFetch'
 
 export default function NewsPost() {
-    const { newsData, newsError, newsLoading } = useContext(SearchContext)
-    const { title, text, type, author, created_at, children } = { ...newsData }
+    const { objectID } = useContext(SearchContext)
+    const { data, loading } = useNewsFetch(objectID)
+    const { title, text, type, author, created_at, children } = { ...data }
     const navigate = useNavigate()
-    console.debug(newsData)
-    // "306cce"  72a1ed
+
     return (
         <>
-            {newsLoading ? (
+            {loading ? (
                 <Hourglass
                     visible={true}
                     height="100vh"
@@ -46,8 +47,8 @@ export default function NewsPost() {
                         </div>
                     </div>
                     <div className="newspost-comment-wrapper">
-                        {children?.map((comment) => (
-                            <Comment {...comment} />
+                        {children?.map((comment, ind) => (
+                            <Comment {...comment} key={ind} />
                         ))}
                     </div>
                 </div>

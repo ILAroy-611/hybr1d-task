@@ -1,29 +1,39 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Header from '../../layout/header'
 import { SearchContext } from '../../state/SearchContext'
-import NewsCard from '../../components/card'
-import { NavLink } from 'react-router-dom'
+import { ThreeCircles } from 'react-loader-spinner'
+import CardList from '../../layout/cardList/cardList'
 import './style.css'
 
 export default function Home() {
-    const { data, setObjectID } = useContext(SearchContext)
-    console.debug(data)
+    const { data, loading, handleInfiniteScroll } = useContext(SearchContext)
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleInfiniteScroll)
+        return () => window.removeEventListener('scroll', handleInfiniteScroll)
+    }, [])
+
     return (
         <div className="home-page-wrapper">
             <Header />
-            <div>
-                {data?.hits?.map((ele) => {
-                    return (
-                        <ul>
-                            <nav id="newscard" onClick={() => setObjectID(ele?.objectID)}>
-                                <NavLink to="/news" className={'link'}>
-                                    <NewsCard {...ele} />
-                                </NavLink>
-                            </nav>
-                        </ul>
-                    )
-                })}
-            </div>
+            {loading ? (
+                <ThreeCircles
+                    height="90vh"
+                    width="100"
+                    color="#4fa94d"
+                    wrapperStyle={{}}
+                    wrapperClass="circle-loading"
+                    visible={true}
+                    ariaLabel="three-circles-rotating"
+                    outerCircleColor=""
+                    innerCircleColor=""
+                    middleCircleColor=""
+                />
+            ) : (
+                <div>
+                    <CardList list={data?.hits} />
+                </div>
+            )}
         </div>
     )
 }

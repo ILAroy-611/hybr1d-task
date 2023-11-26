@@ -1,4 +1,4 @@
-import { formatDate } from '../../utils'
+import { formatDate } from '../../utils/common'
 import Comments from '../comments'
 import './style.css'
 
@@ -11,8 +11,8 @@ export default function Comment({ author, text, created_at, children }) {
             </div>
             <div className="comment-text-wrapper">
                 <p className="comment-text">{text}</p>
-                {children?.map((comment) => (
-                    <Comments {...comment} />
+                {children?.map((comment, ind) => (
+                    <Comments {...comment} key={ind} />
                 ))}
             </div>
         </div>

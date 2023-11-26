@@ -1,29 +1,27 @@
 import { useEffect, useState } from 'react'
-import { instance } from '../services/instance'
+import { getNewsPost } from '../utils/api'
 
 export default function useNewsFetch(id) {
-    const [newsLoading, setLoading] = useState(false)
-    const [newsData, setNewsData] = useState({})
-    const [newsError, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+    const [data, setData] = useState({})
+    const [error, setError] = useState('')
 
-    const getNewsPost = async () => {
+    const handleFetchNewsPost = async () => {
         try {
             setLoading(true)
-            const response = await instance.get(`/items/${id}`)
-            console.debug(response)
-            setNewsData({ ...response?.data })
+            const result = await getNewsPost(id)
+            setData({ ...result })
         } catch (error) {
-            console.debug(error)
-            setError(error.message)
+            setError(error)
         } finally {
             setLoading(false)
         }
     }
 
     useEffect(() => {
-        getNewsPost()
+        handleFetchNewsPost()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
-    return { newsData, newsLoading, newsError }
+    return { data, loading, error }
 }

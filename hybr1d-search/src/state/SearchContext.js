@@ -1,15 +1,25 @@
 import { createContext, useState } from 'react'
 import useFetch from '../hooks/useFetch'
-import useNewsFetch from '../hooks/useNewsFetch'
 
 export const SearchContext = createContext()
 
 export default function SearchContextProvider({ children }) {
     const [search, setSearch] = useState('')
-    const { data, error, loading } = useFetch(search)
+    const [pageOffset, setPageOffset] = useState(0)
+    const { data, error, loading, totalPage } = useFetch(search, pageOffset)
     const [objectID, setObjectID] = useState('')
-    const { newsData, newsError, newsLoading } = useNewsFetch(objectID)
 
+    const handleInfiniteScroll = async () => {
+        const element = document.documentElement
+        if (
+            element.scrollTop + window.innerHeight + 1 > element.scrollHeight ||
+            element.scrollTop + window.innerHeight + 1 === element.scrollHeight
+        ) {
+            if (pageOffset < totalPage) {
+                setPageOffset((prev) => prev + 1)
+            }
+        }
+    }
     return (
         <SearchContext.Provider
             value={{
@@ -19,9 +29,8 @@ export default function SearchContextProvider({ children }) {
                 search,
                 setSearch,
                 setObjectID,
-                newsData,
-                newsError,
-                newsLoading,
+                objectID,
+                handleInfiniteScroll,
             }}
         >
             {children}

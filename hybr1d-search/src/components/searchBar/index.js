@@ -17,7 +17,9 @@ export default function SearchBar() {
                 onChange={handleChange}
                 className="searchbar"
             />
-            <CancelIcon className="cancel-icon" />
+            <div onClick={() => setSearch('')}>
+                <CancelIcon className="cancel-icon" />
+            </div>
         </div>
     )
 }
