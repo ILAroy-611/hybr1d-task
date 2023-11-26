@@ -24,10 +24,10 @@ export default function useFetch(text, pageOffset) {
     }
 
     useEffect(() => {
-        setTimeout(() => {
+        const timerID = setTimeout(() => {
             handleFetchSearchResult()
-        }, 2000)
-
+        }, 1000)
+        return () => clearTimeout(timerID)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [text, pageOffset])
 

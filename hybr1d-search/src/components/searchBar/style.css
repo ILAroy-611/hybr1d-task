@@ -1,5 +1,5 @@
 .searchbar {
-    min-width: 80%;
+    width: 80%;
     font-size: 1.2rem;
     border: none;
     outline: none;
@@ -20,4 +20,12 @@
 .cancel-icon {
     color: black;
     cursor: pointer;
+}
+
+.show-icon {
+    display: block;
+}
+
+.hide-icon {
+    opacity: 0;
 }

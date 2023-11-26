@@ -6,6 +6,7 @@ import './style.css'
 export default function SearchBar() {
     const { search, setSearch } = useContext(SearchContext)
     const handleChange = (e) => setSearch(e.target.value)
+    const handleResetSearch = () => setSearch('')
 
     return (
         <div className="searchbar-wrapper">
@@ -17,8 +18,10 @@ export default function SearchBar() {
                 onChange={handleChange}
                 className="searchbar"
             />
-            <div onClick={() => setSearch('')}>
-                <CancelIcon className="cancel-icon" />
+            <div onClick={handleResetSearch}>
+                <CancelIcon
+                    className={`${search.length ? 'show-icon cancel-icon' : 'hide-icon'}`}
+                />
             </div>
         </div>
     )
