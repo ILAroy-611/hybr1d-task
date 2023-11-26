@@ -3,11 +3,14 @@ import { SearchContext } from '../../state/SearchContext'
 import { Hourglass } from 'react-loader-spinner'
 import { formatDate } from '../../utils'
 import Comment from '../../components/comment'
+import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
+import { useNavigate } from 'react-router-dom'
 import './style.css'
 
 export default function NewsPost() {
     const { newsData, newsError, newsLoading } = useContext(SearchContext)
     const { title, text, type, author, created_at, children } = { ...newsData }
+    const navigate = useNavigate()
     console.debug(newsData)
     // "306cce"  72a1ed
     return (
@@ -27,16 +30,19 @@ export default function NewsPost() {
                     <div>
                         <div className="newspost-type-wrapper">
                             <div className="newspost-type">{type}</div>
+                            <div onClick={() => navigate('/')}>
+                                <HomeIcon className="home-icon" />
+                            </div>
                         </div>
                         <div className="newspost-header-wrapper">
                             <h4 className="newspost-header">{title}</h4>
-                            <p className="newspost-text">{text ?? ''}</p>
                             <div className="newspost-additional-info-wrapper">
                                 <div className="newspost-author">{author}</div>
                                 <div className="newspost-date">
                                     {created_at && formatDate(created_at)}
                                 </div>
                             </div>
+                            <p className="newspost-text">{text ?? ''}</p>
                         </div>
                     </div>
                     <div className="newspost-comment-wrapper">

@@ -1,11 +1,14 @@
 .header-wrapper {
     color: wheat;
     display: flex;
-    gap: 2rem;
-    padding: 1rem 2rem;
+    gap: 4rem;
+    padding: 2rem 3rem;
+    align-items: center;
 }
 
 .logo {
+    font-weight: 500;
+    font-size: 2rem;
 }
 
 .search-bar-wrapper {

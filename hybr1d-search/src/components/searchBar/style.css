@@ -1,0 +1,23 @@
+.searchbar {
+    min-width: 80%;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+}
+
+.searchbar-wrapper {
+    width: 150%;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    justify-content: space-between;
+}
+
+.cancel-icon {
+    color: black;
+    cursor: pointer;
+}

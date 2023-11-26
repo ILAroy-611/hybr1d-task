@@ -13,8 +13,9 @@ export default function NewsCard({
     return (
         <div className="newscard-wrapper">
             <div className="newscard-title-container">
-                <h3 className="newscard-title">{title || story_title}</h3>
-                <p className="newscard-text">{text ?? story_text ?? ''}</p>
+                <h3 className="newscard-title">
+                    {title ?? story_title ?? 'Title On the Way...'}
+                </h3>
                 <a href={`${url}`} className="newscard-text">
                     {url}
                 </a>

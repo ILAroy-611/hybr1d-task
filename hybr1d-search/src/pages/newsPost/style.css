@@ -1,14 +1,27 @@
 .newspost-detail-wrapper {
-    padding: 3rem;
+    padding: 2rem 3rem;
     text-align: justify;
 }
 
 .newspost-type-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .newspost-type {
     color: green;
     padding: 0.5rem 0;
+}
+
+.home-icon {
+    color: green;
+    cursor: pointer;
+    transition: all 0.03 ease-in-out;
+}
+
+.home-icon:hover {
+    transform: scale(1.4) rotate(-30deg);
 }
 
 .newspost-header-wrapper {
@@ -22,6 +35,9 @@
 
 .newspost-text {
     color: white;
+    padding: 0.5rem;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
 }
 
 .newspost-additional-info-wrapper {

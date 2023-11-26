@@ -16,7 +16,7 @@
 .newscard-wrapper:hover {
     background: linear-gradient(108.54deg, #f5f178 9%, #bfb4fe 75.95%);
     cursor: pointer;
-    transform: translateX(1.5rem) skewX(-10deg);
+    transform: translateX(3rem) skewX(-10deg) scaleY(1.1);
 }
 
 .newscard-title {
