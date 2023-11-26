@@ -11,6 +11,7 @@ export default function Home() {
     useEffect(() => {
         window.addEventListener('scroll', handleInfiniteScroll)
         return () => window.removeEventListener('scroll', handleInfiniteScroll)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

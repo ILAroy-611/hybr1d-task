@@ -24,9 +24,6 @@
     transform: scale(1.4) rotate(-30deg);
 }
 
-.newspost-header-wrapper {
-}
-
 .newspost-header {
     color: white;
     font-size: 2rem;
@@ -51,7 +48,4 @@
 
 .newspost-date {
     font-size: 0.8rem;
-}
-
-.newspost-comment-wrapper {
 }

@@ -3,8 +3,6 @@ import './style.css'
 export default function NewsCard({
     title,
     story_title,
-    story_text,
-    text,
     url,
     points,
     author,

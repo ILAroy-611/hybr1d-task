@@ -1,0 +1,11 @@
+.not-found-wrapper {
+    color: wheat;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.not-found-header {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 4rem;
+}

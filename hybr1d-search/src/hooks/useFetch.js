@@ -31,5 +31,5 @@ export default function useFetch(text, pageOffset) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [text, pageOffset])
 
-    return { data, loading, error, text, totalPage }
+    return { data, loading, error, totalPage }
 }

@@ -5,8 +5,8 @@ import { formatDate } from '../../utils/common/index'
 import Comment from '../../components/comment'
 import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
 import { useNavigate } from 'react-router-dom'
-import './style.css'
 import useNewsFetch from '../../hooks/useNewsFetch'
+import './style.css'
 
 export default function NewsPost() {
     const { objectID } = useContext(SearchContext)

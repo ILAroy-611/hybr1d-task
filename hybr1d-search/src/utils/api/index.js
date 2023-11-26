@@ -16,7 +16,6 @@ export const getSearchResult = async (text, pageXOffset) => {
             `/search?query=${text}&hitsPerPage=20&page=${pageXOffset}`
         )
         return response?.data
-        // setTotalPage(response.data.nbPages)
     } catch (error) {
         console.debug(error)
         return new Error(error.message)
