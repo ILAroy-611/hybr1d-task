@@ -17,7 +17,7 @@ export const getSearchResult = async (text, pageOffset) => {
         )
         return response?.data
     } catch (error) {
-        console.debug('err', error)
+        console.debug(error)
         return new Error(error.message)
     }
 }
