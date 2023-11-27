@@ -1,7 +1,7 @@
 # Instruction/command to run the app-
 npm start
 
-#Hosted the app on vercel-
+# Hosted the app on vercel-
 link - https://hybr1d-task.vercel.app/
 
 # hybr1d-task
