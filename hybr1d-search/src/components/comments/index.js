@@ -17,7 +17,10 @@ export default function Comments({ author, text, created_at, children }) {
                 <p className="comment-date">{created_at && formatDate(created_at)}</p>
             </div>
             <div className="comments-text-wrapper">
-                <p className="comment-text">{text}</p>
+                <p
+                    className="comment-text"
+                    dangerouslySetInnerHTML={{ __html: text }}
+                ></p>
                 {children?.map((comment, ind) => (
                     <Comment {...comment} key={ind} />
                 ))}

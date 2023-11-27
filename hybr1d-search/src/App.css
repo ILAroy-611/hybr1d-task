@@ -5,3 +5,9 @@
     text-align: center;
     background-color: #0a0913;
 }
+
+p,
+a {
+    max-width: 90%;
+    word-wrap: break-word;
+}
