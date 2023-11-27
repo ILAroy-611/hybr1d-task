@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const instance = axios.create({
-    baseURL: `https://hn.algolia.com/api/v1`,
+    baseURL: `http://hn.algolia.com/api/v1`,
     headers: {
         'Content-Type': 'application/json',
     },
