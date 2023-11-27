@@ -10,3 +10,5 @@ Infinite Scroll has been applied to load data when required. Initially only 10 r
 # Instruction/command to run the app-
 npm start
 
+Hosted the app on vercel- https://hybr1d-task.vercel.app/
+
