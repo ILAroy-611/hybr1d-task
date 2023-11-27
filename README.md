@@ -1,7 +1,8 @@
 # Instruction/command to run the app-
 npm start
 
-Hosted the app on vercel- https://hybr1d-task.vercel.app/
+#Hosted the app on vercel-
+link - https://hybr1d-task.vercel.app/
 
 # hybr1d-task
 1. Home Page of the app. It has a simple logo and a search bar to help users search the hacker news. The search results/initial results are displayed in the cards. In the card, we are showing the title of the news, link to the full story and in the footer of the card, information regarding the author, points given and number of comments count is displayed. 
