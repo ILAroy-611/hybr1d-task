@@ -33,7 +33,6 @@ export default function Home() {
             ) : (
                 <div className="cardlist-wrapper">
                     <CardList list={data} />
-                    {/* <CardList list={accumulatedData?.hits} /> */}
                 </div>
             )}
         </div>

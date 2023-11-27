@@ -1,11 +1,11 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import useNewsFetch from '../../hooks/useNewsFetch'
 import { SearchContext } from '../../state/SearchContext'
 import { Hourglass } from 'react-loader-spinner'
 import { formatDate } from '../../utils/common/index'
 import Comment from '../../components/comment'
 import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
-import { useNavigate } from 'react-router-dom'
-import useNewsFetch from '../../hooks/useNewsFetch'
 import './style.css'
 
 export default function NewsPost() {

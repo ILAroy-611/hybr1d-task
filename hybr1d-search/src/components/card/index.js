@@ -19,6 +19,7 @@ export default function NewsCard({
                     target="_blank"
                     className="newscard-url"
                     onClick={(e) => e.stopPropagation()}
+                    rel="noreferrer"
                 >
                     {url}
                 </a>
