@@ -1,15 +1,15 @@
 {
-    "short_name": "Hybr1d Search",
-    "name": "Hybr1d Search",
-    "icons": [
-        {
-            "src": "/images/search.png",
-            "type": "image/png",
-            "sizes": "192x192"
-        }
-    ],
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+  "short_name": "Hybr1d Search",
+  "name": "Hybr1d Search",
+  "icons": [
+    {
+      "src": "search.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
