@@ -19,7 +19,7 @@ export default function useFetch(text, pageOffset) {
         try {
             setLoading(true)
             const result = await getSearchResult(text, pageOffset)
-            setData((prevData) => [...prevData, ...result.hits])
+            setData((prevData) => [...prevData, ...result?.hits])
             setTotalPage(result.nbPages)
         } catch (error) {
             setError(error)
