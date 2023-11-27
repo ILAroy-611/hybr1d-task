@@ -3,7 +3,7 @@
     "name": "Hybr1d Search",
     "icons": [
         {
-            "src": "assets/images/search.png",
+            "src": "search.png",
             "type": "image/png",
             "sizes": "192x192"
         }
