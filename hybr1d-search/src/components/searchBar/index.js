@@ -3,6 +3,12 @@ import { SearchContext } from '../../state/SearchContext'
 import { ReactComponent as CancelIcon } from '../../assets/icons/cancel.svg'
 import './style.css'
 
+/**
+ *
+ *
+ * @export
+ * @return {*}
+ */
 export default function SearchBar() {
     const { search, setSearch } = useContext(SearchContext)
     const handleChange = (e) => setSearch(e.target.value)

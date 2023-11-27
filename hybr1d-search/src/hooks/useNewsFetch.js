@@ -1,6 +1,13 @@
 import { useEffect, useState } from 'react'
 import { getNewsPost } from '../utils/api'
 
+/**
+ *
+ *
+ * @export
+ * @param {*} id
+ * @return {*}
+ */
 export default function useNewsFetch(id) {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({})

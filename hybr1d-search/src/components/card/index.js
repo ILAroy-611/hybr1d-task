@@ -1,5 +1,17 @@
 import './style.css'
 
+/**
+ * @export
+ * @param {string} {
+ *     title,
+ *     story_title,
+ *     url,
+ *     points,
+ *     author,
+ *     num_comments,
+ * }
+ * @return {*}
+ */
 export default function NewsCard({
     title,
     story_title,

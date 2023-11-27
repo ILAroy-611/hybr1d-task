@@ -2,6 +2,12 @@ import { formatDate } from '../../utils/common'
 import Comments from '../comments'
 import './style.css'
 
+/**
+ *
+ * @export
+ * @param {*} { author, text, created_at, children }
+ * @return {*}
+ */
 export default function Comment({ author, text, created_at, children }) {
     return (
         <div className="comment-wrapper">

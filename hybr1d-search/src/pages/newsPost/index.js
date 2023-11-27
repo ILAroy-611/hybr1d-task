@@ -8,6 +8,12 @@ import Comment from '../../components/comment'
 import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
 import './style.css'
 
+/**
+ *
+ *
+ * @export
+ * @return {*}
+ */
 export default function NewsPost() {
     const { objectID } = useContext(SearchContext)
     const { data, loading } = useNewsFetch(objectID)

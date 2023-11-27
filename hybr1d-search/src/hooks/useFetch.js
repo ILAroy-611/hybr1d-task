@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react'
 import { getSearchResult } from '../utils/api'
 
+/**
+ *
+ *
+ * @export
+ * @param {*} text
+ * @param {*} pageOffset
+ * @return {*}
+ */
 export default function useFetch(text, pageOffset) {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState([])

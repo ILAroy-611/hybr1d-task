@@ -1,6 +1,12 @@
 import SearchBar from '../../components/searchBar'
 import './style.css'
 
+/**
+ *
+ *
+ * @export
+ * @return {*}
+ */
 export default function Header() {
     return (
         <div className="header-wrapper">

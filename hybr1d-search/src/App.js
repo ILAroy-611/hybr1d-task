@@ -4,6 +4,11 @@ import NewsPost from './pages/newsPost'
 import NotFound from './pages/notFound'
 import './App.css'
 
+/**
+ *
+ *
+ * @return {*}
+ */
 function App() {
     return (
         <div className="App">

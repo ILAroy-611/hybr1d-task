@@ -4,6 +4,13 @@ import { NavLink } from 'react-router-dom'
 import NewsCard from '../../components/card'
 import './style.css'
 
+/**
+ *
+ *
+ * @export
+ * @param {*} { list }
+ * @return {*}
+ */
 export default function CardList({ list }) {
     const { setObjectID } = useContext(SearchContext)
 

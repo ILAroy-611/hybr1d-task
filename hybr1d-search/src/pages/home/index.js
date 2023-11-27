@@ -5,6 +5,12 @@ import { ThreeCircles } from 'react-loader-spinner'
 import CardList from '../../layout/cardList/cardList'
 import './style.css'
 
+/**
+ *
+ *
+ * @export
+ * @return {*}
+ */
 export default function Home() {
     const { data, loading, handleInfiniteScroll } = useContext(SearchContext)
 

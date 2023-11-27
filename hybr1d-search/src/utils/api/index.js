@@ -10,10 +10,10 @@ export const getNewsPost = async (id) => {
     }
 }
 
-export const getSearchResult = async (text, pageXOffset) => {
+export const getSearchResult = async (text, pageOffset) => {
     try {
         const response = await instance.get(
-            `/search?query=${text}&hitsPerPage=20&page=${pageXOffset}`
+            `/search?query=${text}&hitsPerPage=20&page=${pageOffset}`
         )
         return response?.data
     } catch (error) {
