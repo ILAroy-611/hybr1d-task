@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom'
-import NewsCard from '../../components/card'
 import { useContext } from 'react'
 import { SearchContext } from '../../state/SearchContext'
+import { NavLink } from 'react-router-dom'
+import NewsCard from '../../components/card'
 import './style.css'
 
 export default function CardList({ list }) {

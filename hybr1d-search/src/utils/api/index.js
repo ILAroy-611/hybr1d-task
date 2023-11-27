@@ -3,7 +3,7 @@ import { instance } from '../../services/instance'
 export const getNewsPost = async (id) => {
     try {
         const response = await instance.get(`/items/${id}`)
-        return response.data
+        return response?.data
     } catch (error) {
         console.debug(error)
         return new Error(error.message)

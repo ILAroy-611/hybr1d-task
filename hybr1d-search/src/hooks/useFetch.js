@@ -3,7 +3,7 @@ import { getSearchResult } from '../utils/api'
 
 export default function useFetch(text, pageOffset) {
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
     const [error, setError] = useState('')
     const [totalPage, setTotalPage] = useState(1)
 
@@ -11,10 +11,7 @@ export default function useFetch(text, pageOffset) {
         try {
             setLoading(true)
             const result = await getSearchResult(text, pageOffset)
-            console.debug(result)
-            setData((prevData) => {
-                return { ...prevData, ...result }
-            })
+            setData((prevData) => [...prevData, ...result.hits])
             setTotalPage(result.nbPages)
         } catch (error) {
             setError(error)

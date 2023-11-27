@@ -31,8 +31,9 @@ export default function Home() {
                     middleCircleColor=""
                 />
             ) : (
-                <div>
-                    <CardList list={data?.hits} />
+                <div className="cardlist-wrapper">
+                    <CardList list={data} />
+                    {/* <CardList list={accumulatedData?.hits} /> */}
                 </div>
             )}
         </div>

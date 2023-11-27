@@ -11,14 +11,18 @@ export default function SearchContextProvider({ children }) {
 
     const handleInfiniteScroll = async () => {
         const element = document.documentElement
-        if (
-            element.scrollTop + window.innerHeight + 1 > element.scrollHeight ||
-            element.scrollTop + window.innerHeight + 1 === element.scrollHeight
-        ) {
-            if (pageOffset < totalPage) {
-                setPageOffset((prev) => prev + 1)
+        setTimeout(() => {
+            if (
+                element.scrollTop + window.innerHeight + 1 > element.scrollHeight ||
+                element.scrollTop + window.innerHeight + 1 === element.scrollHeight
+            ) {
+                if (pageOffset < totalPage) {
+                    setPageOffset((prev) => prev + 1)
+                    // element.scrollTo({ top: 0 })
+                }
             }
-        }
+        }, 1000)
+        // clearTimeout(timerID)
     }
     return (
         <SearchContext.Provider

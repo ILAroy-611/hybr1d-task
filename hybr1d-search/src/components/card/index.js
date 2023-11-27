@@ -14,7 +14,12 @@ export default function NewsCard({
                 <h3 className="newscard-title">
                     {title ?? story_title ?? 'Title On the Way...'}
                 </h3>
-                <a href={`${url}`} className="newscard-text">
+                <a
+                    href={`${url}`}
+                    target="_blank"
+                    className="newscard-url"
+                    onClick={(e) => e.stopPropagation()}
+                >
                     {url}
                 </a>
             </div>
