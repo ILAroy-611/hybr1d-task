@@ -11,10 +11,15 @@ export const getNewsPost = async (id) => {
 }
 
 export const getSearchResult = async (text = '', pageOffset) => {
+    // let queryParam =
+    //     text !== ''
+    //         ? `query=${text}&hitsPerPage=20&page=${pageOffset}`
+    //         : `hitsPerPage=20&page=${pageOffset}`
+    console.debug(pageOffset)
     let queryParam =
         text !== ''
-            ? `query=${text}&hitsPerPage=20&page=${pageOffset}`
-            : `hitsPerPage=20&page=${pageOffset}`
+            ? `query=${text}&hitsPerPage=${10 * (pageOffset + 1)}`
+            : `hitsPerPage=${10 * (pageOffset + 1)}`
     try {
         const response = await instance.get(`/search?${queryParam}`)
         return response?.data

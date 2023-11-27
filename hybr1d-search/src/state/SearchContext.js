@@ -25,6 +25,7 @@ export default function SearchContextProvider({ children }) {
                 if (pageOffset < totalPage) {
                     setPageOffset((prev) => prev + 1)
                 }
+                element.scrollTo({ top: window.innerHeight - element.scrollTop })
             }
         }, 1000)
     }
@@ -39,6 +40,7 @@ export default function SearchContextProvider({ children }) {
                 setObjectID,
                 objectID,
                 handleInfiniteScroll,
+                setPageOffset,
             }}
         >
             {children}

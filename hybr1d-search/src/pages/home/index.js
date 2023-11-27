@@ -14,6 +14,8 @@ import './style.css'
 export default function Home() {
     const { data, loading, handleInfiniteScroll } = useContext(SearchContext)
 
+    console.debug(data)
+
     useEffect(() => {
         window.addEventListener('scroll', handleInfiniteScroll)
         return () => window.removeEventListener('scroll', handleInfiniteScroll)

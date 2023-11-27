@@ -10,9 +10,15 @@ import './style.css'
  * @return {*}
  */
 export default function SearchBar() {
-    const { search, setSearch } = useContext(SearchContext)
-    const handleChange = (e) => setSearch(e.target.value)
-    const handleResetSearch = () => setSearch('')
+    const { search, setSearch, setPageOffset } = useContext(SearchContext)
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+        setPageOffset(0)
+    }
+    const handleResetSearch = () => {
+        setSearch('')
+        setPageOffset(0)
+    }
 
     return (
         <div className="searchbar-wrapper">
