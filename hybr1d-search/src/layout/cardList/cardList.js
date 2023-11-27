@@ -20,14 +20,11 @@ export default function CardList({ list }) {
                 list?.map((item) => {
                     return (
                         <ul key={item?.objectID}>
-                            <nav
-                                id="newscard"
-                                onClick={() => setObjectID(item?.objectID)}
-                            >
+                            <li id="newscard" onClick={() => setObjectID(item?.objectID)}>
                                 <NavLink to="/news" className={'link'}>
                                     <NewsCard {...item} />
                                 </NavLink>
-                            </nav>
+                            </li>
                         </ul>
                     )
                 })
